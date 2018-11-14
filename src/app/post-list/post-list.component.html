@@ -1,0 +1,16 @@
+<!-- {{this | json }} -->
+<li [ngClass]="{'my-3': true,
+                'list-group-item': true,
+                'list-group-item-success': getLove() === 'loveIt',
+                'list-group-item-danger': getLove() === 'dontLoveIt',
+                'list-group-item-light': getLove() === 'dontknow'}">
+  <div class="text-right">
+      {{ created_at | date : 'short'}}
+  </div>
+  <h2>{{ postTitle }}</h2>
+  <div class="my-3">
+    {{ postContent }}
+  </div>
+  <button class="btn btn-success" (click)="lovePlus()">Love iT!</button>
+  <button class="btn btn-danger" (click)="loveMoins()">Don't love iT!</button>
+</li>
